@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-    
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -11,14 +10,17 @@ export const Form = styled.form`
     gap: 10px;
     border: 1px solid rgba(0,0,0,0.2);
     border-radius: 10px;
-    background-color: coral
+    background-color: coral;
 `;
 
-export const Container = styled.div`
+export const InputWrapper = styled.div`
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: grey;
+    width: 50%;
+    justify-content: space-between;
 `;
 
+export const ButtonWrapper = styled.div`
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+`;

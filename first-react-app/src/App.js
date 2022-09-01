@@ -1,16 +1,28 @@
-import React from "react";
-import LoginForm from "./components/LoginForm";
+import React, { useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
-//https://api.openweathermap.org/data/2.5/weather?units=metric&q=Istanbul,tr&APPID=b039e459b151af4b3a20ad890b34942e
+import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+import { getFromStorage } from '../src/utils/helpers';
+import { STORAGE_KEYS } from '../src/utils/constants';
+
 function App() {
-  const adminUser = { username: "admin", password: "admin" }
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const isLoggedIn = getFromStorage(STORAGE_KEYS.IS_LOGGED_IN);
+
+    if (isLoggedIn) {
+      navigate("../dashboard", { replace: true });
+    }
+  }, [navigate]);
 
   return (
-    <div>
-      <LoginForm adminUser={adminUser} />
-    </div >
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
   )
-
 }
 
 export default App;
