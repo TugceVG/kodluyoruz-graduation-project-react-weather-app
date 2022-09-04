@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 export const CardWrapper = styled.div`
-    position: absolute;
-    bottom: 50%;
-    right: 50%;
     display: flex;
     justify-content:center;
     flex-direction: column;
@@ -12,6 +9,8 @@ export const CardWrapper = styled.div`
     background: lightgray;
     font-size: 20px;
     font-weight: bold;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius:15px ;
 `;
 
 export const CardHeader = styled.div`
