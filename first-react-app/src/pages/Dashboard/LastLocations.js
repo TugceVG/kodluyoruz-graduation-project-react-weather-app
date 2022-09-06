@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 
 import Card from '../../components/Card';
-import { getFromStorage } from '../../utils/helpers';
-import { STORAGE_KEYS } from '../../utils/constants';
+import { GlobalContext } from '../../GlobalState';
 import {
     Title,
     Content,
@@ -10,18 +9,17 @@ import {
 } from './styled';
 
 function LastLocations() {
-    const [locations, setLocations] = useState(getFromStorage(STORAGE_KEYS.SEARCHED_LOCATIONS) || []);
+    const { lastLocations } = useContext(GlobalContext);
 
-    console.log(locations)
     return (
         <Wrapper>
             <Title>
                 <label> Last Searches ... </label>
             </Title>
             <Content>
-                <Card location={locations[0]} />
-                <Card location={locations[1]} />
-                <Card location={locations[2]} />
+                <Card location={lastLocations[0]} />
+                <Card location={lastLocations[1]} />
+                <Card location={lastLocations[2]} />
             </Content>
         </Wrapper>
     )

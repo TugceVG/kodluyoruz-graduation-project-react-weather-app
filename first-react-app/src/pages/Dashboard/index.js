@@ -4,8 +4,8 @@ import SearchIcon from '../../icons/search-icon.svg';
 import Header from '../../components/Header';
 import Card from '../../components/Card'
 import LastLocations from './LastLocations';
-import { getFromStorage, saveToStorage } from '../../utils/helpers';
-import { STORAGE_KEYS } from '../../utils/constants';
+// import { getFromStorage, saveToStorage } from '../../utils/helpers';
+// import { STORAGE_KEYS } from '../../utils/constants';
 
 import {
     SearchContainer,
@@ -20,19 +20,12 @@ import {
 function Dashboard() {
     const inputRef = useRef();
     const [location, setLocation] = useState("");
+    const [shouldSave, setShouldSave] = useState(false);
 
     const handleButtonClick = (e) => {
         setLocation(inputRef.current.value);
-
-        const searchedLocations = getFromStorage(STORAGE_KEYS.SEARCHED_LOCATIONS) || [];
-        searchedLocations.push(inputRef.current.value);
-
-        if (searchedLocations.length > 3) {
-            searchedLocations.shift();
-        }
-
-        saveToStorage(STORAGE_KEYS.SEARCHED_LOCATIONS, searchedLocations);
         inputRef.current.value = "";
+        setShouldSave(true);
     }
 
     return (
@@ -46,9 +39,9 @@ function Dashboard() {
                     </InputContainer>
                     <Button onClick={handleButtonClick}>Get Weather</Button>
                 </SearchContainer>
-                <Card location={location} />
+                <Card location={location} shouldSave={shouldSave} />
             </Container>
-            <LastLocations />
+            <LastLocations location={location} shouldSave={shouldSave} />
         </Main>
     )
 }
