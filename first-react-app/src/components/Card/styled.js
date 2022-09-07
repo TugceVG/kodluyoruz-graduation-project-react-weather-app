@@ -20,6 +20,7 @@ export const CardHeader = styled.div`
 `
 export const CardBody = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 `

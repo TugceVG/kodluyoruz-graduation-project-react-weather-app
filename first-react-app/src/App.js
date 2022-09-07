@@ -7,6 +7,7 @@ import { getFromStorage } from '../src/utils/helpers';
 import { STORAGE_KEYS } from '../src/utils/constants';
 import { GlobalProvider } from './GlobalState';
 
+
 function App() {
 
   const navigate = useNavigate();
@@ -16,6 +17,8 @@ function App() {
 
     if (isLoggedIn) {
       navigate("../dashboard", { replace: true });
+    } else {
+      navigate("../", { replace: true });
     }
   }, [navigate]);
 

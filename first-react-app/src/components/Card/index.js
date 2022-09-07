@@ -6,9 +6,9 @@ import { getFromStorage, saveToStorage } from '../../utils/helpers';
 import { STORAGE_KEYS } from '../../utils/constants';
 import { GlobalContext } from '../../GlobalState';
 
-function Card({ location, shouldSave = false }) {
+function Card({ location, shouldSave = false, showDetails = false }) {
     const [data, setData] = useState(null);
-    const { locationsHandler } = useContext(GlobalContext);
+    const { locationsHandler, setIsModalOpen } = useContext(GlobalContext);
 
     useEffect(() => {
         if (location) {
@@ -50,6 +50,9 @@ function Card({ location, shouldSave = false }) {
             </CardHeader>
             <CardBody>
                 {data.main.temp}
+                {showDetails &&
+                    <button className="openModalBtn" onClick={() => { setIsModalOpen(true) }}>Detail about the city</button>
+                }
             </CardBody>
         </CardWrapper>
     )

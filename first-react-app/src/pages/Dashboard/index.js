@@ -1,9 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 
 import SearchIcon from '../../icons/search-icon.svg';
 import Header from '../../components/Header';
 import Card from '../../components/Card'
 import LastLocations from './LastLocations';
+import Modal from '../../components/Modal';
+
 // import { getFromStorage, saveToStorage } from '../../utils/helpers';
 // import { STORAGE_KEYS } from '../../utils/constants';
 
@@ -39,9 +41,10 @@ function Dashboard() {
                     </InputContainer>
                     <Button onClick={handleButtonClick}>Get Weather</Button>
                 </SearchContainer>
-                <Card location={location} shouldSave={shouldSave} />
+                <Card showDetails={true} location={location} shouldSave={shouldSave} />
             </Container>
             <LastLocations location={location} shouldSave={shouldSave} />
+            <Modal location={location} />
         </Main>
     )
 }
