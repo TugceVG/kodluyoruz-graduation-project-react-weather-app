@@ -1,13 +1,10 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef } from 'react';
 
 import SearchIcon from '../../icons/search-icon.svg';
 import Header from '../../components/Header';
 import Card from '../../components/Card'
 import LastLocations from './LastLocations';
 import Modal from '../../components/Modal';
-
-// import { getFromStorage, saveToStorage } from '../../utils/helpers';
-// import { STORAGE_KEYS } from '../../utils/constants';
 
 import {
     SearchContainer,

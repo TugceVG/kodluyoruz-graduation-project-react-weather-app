@@ -49,10 +49,10 @@ function Card({ location, shouldSave = false, showDetails = false }) {
                 {data.name}
             </CardHeader>
             <CardBody>
-                {data.main.temp}
-                {showDetails &&
+                <span>{data.main.temp}</span>
+                <span>{showDetails &&
                     <button className="openModalBtn" onClick={() => { setIsModalOpen(true) }}>Detail about the city</button>
-                }
+                }</span>
             </CardBody>
         </CardWrapper>
     )

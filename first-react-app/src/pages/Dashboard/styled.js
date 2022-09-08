@@ -34,12 +34,16 @@ export const Button = styled.button`
 
 export const Container = styled.section`
     display: flex;
-    justify-content: space-between;
-    width: 650px;
+    flex-flow: wrap;
+    justify-content: center;
     align-items: center;
     margin: auto;
     margin-top: 20px;
     gap: 5px;
+    
+    @media (max-width: 707px) {
+        gap: 15px;
+    }
 `;
 
 export const Wrapper = styled.section`
@@ -52,20 +56,20 @@ export const Wrapper = styled.section`
 export const Title = styled.section`
     font-weight: bold;
     padding-left: 10px;
-    width: 900px;
-    margin: auto;
 `;
 
 export const Content = styled.section`
     display: flex;
-    justify-content: space-between;
-    width: 900px;
-    margin: auto;
+    flex-flow: wrap;
+    justify-content: center;
     margin-top: 20px;
     gap: 6px;
 `;
 
 export const Main = styled.div`
-margin:auto;
-width: 100vh;
-`
+    padding: 0 40px;
+
+    @media (max-width: 401px) {
+        padding: 0;
+    }
+`;
