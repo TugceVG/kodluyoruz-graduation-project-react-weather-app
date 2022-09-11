@@ -9,11 +9,13 @@ function Modal({ location }) {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        fetch(`${BASE_URL}/forecast?units=metric&q=${location},tr&APPID=${WEATHER_API_KEY}`)
-            .then((response) => response.json())
-            .then((result) => setData(result))
-            .catch((err) => console.error(err));
-    }, [location]);
+        if (location && isModalOpen) {
+            fetch(`${BASE_URL}/forecast?units=metric&q=${location},tr&APPID=${WEATHER_API_KEY}`)
+                .then((response) => response.json())
+                .then((result) => setData(result))
+                .catch((err) => console.error(err));
+        }
+    }, [location, isModalOpen]);
 
     if (!isModalOpen) { return null }
     if (!data || !data.list) { return null }
@@ -38,7 +40,7 @@ function Modal({ location }) {
                     <DaysOfWeek>
                         {
                             fiveDays.map((day) =>
-                                <Day>
+                                <Day key={day.dt}>
                                     <span>{getDayText(day.dt)}</span>
                                     <img src={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`} />
                                     <span>{day.weather[0].main}</span>

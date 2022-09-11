@@ -1,13 +1,13 @@
 import React from 'react';
 
 import LoginForm from "../../components/LoginForm";
-import { PageContainer } from "./styled";
+import { PageContainer } from "../../components/PageContainer";
 
 function Login() {
     const adminUser = { username: "admin", password: "admin" };
 
     return (
-        <PageContainer>
+        <PageContainer centered={true}>
             <LoginForm adminUser={adminUser} />
         </PageContainer >
     )

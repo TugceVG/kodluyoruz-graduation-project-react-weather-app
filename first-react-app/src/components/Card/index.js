@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 
-import { CardWrapper, CardHeader, CardBody } from './styled';
+import { CardWrapper, CardHeader, CardBody, Button } from './styled';
 import { BASE_URL, WEATHER_API_KEY } from '../../utils/constants';
 import { getFromStorage, saveToStorage } from '../../utils/helpers';
 import { STORAGE_KEYS } from '../../utils/constants';
@@ -8,14 +8,17 @@ import { GlobalContext } from '../../GlobalState';
 
 function Card({ location, shouldSave = false, showDetails = false }) {
     const [data, setData] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
     const { locationsHandler, setIsModalOpen } = useContext(GlobalContext);
 
     useEffect(() => {
         if (location) {
+            setIsLoading(true);
             fetch(`${BASE_URL}/weather?units=metric&q=${location},tr&APPID=${WEATHER_API_KEY}`)
                 .then((response) => response.json())
                 .then((result) => {
                     setData(result);
+                    setIsLoading(false);
 
                     if (shouldSave && result.cod === 200) {
                         const searchedLocations = getFromStorage(STORAGE_KEYS.SEARCHED_LOCATIONS) || [];
@@ -29,7 +32,10 @@ function Card({ location, shouldSave = false, showDetails = false }) {
                         locationsHandler(searchedLocations);
                     }
                 })
-                .catch((err) => console.error(err));
+                .catch((err) => {
+                    console.error(err);
+                    setIsLoading(false);
+                });
         }
     }, [location, shouldSave]);
 
@@ -51,7 +57,7 @@ function Card({ location, shouldSave = false, showDetails = false }) {
             <CardBody>
                 <span>{data.main.temp}</span>
                 <span>{showDetails &&
-                    <button className="openModalBtn" onClick={() => { setIsModalOpen(true) }}>Detail about the city</button>
+                    <Button className="openModalBtn" onClick={() => { setIsModalOpen(true) }}>Detail about the city</Button>
                 }</span>
             </CardBody>
         </CardWrapper>

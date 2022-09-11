@@ -5,6 +5,8 @@ import Header from '../../components/Header';
 import Card from '../../components/Card'
 import LastLocations from './LastLocations';
 import Modal from '../../components/Modal';
+import { PageContainer } from '../../components/PageContainer';
+import withAuth from '../../components/withAuth';
 
 import {
     SearchContainer,
@@ -28,22 +30,24 @@ function Dashboard() {
     }
 
     return (
-        <Main>
-            <Header title="Dashboard page" />
-            <Container>
-                <SearchContainer>
-                    <InputContainer>
-                        <SearchImage src={SearchIcon} />
-                        <Input type="text" ref={inputRef} placeholder='Search...' />
-                    </InputContainer>
-                    <Button onClick={handleButtonClick}>Get Weather</Button>
-                </SearchContainer>
-                <Card showDetails={true} location={location} shouldSave={shouldSave} />
-            </Container>
-            <LastLocations location={location} shouldSave={shouldSave} />
-            <Modal location={location} />
-        </Main>
+        <PageContainer>
+            <Main>
+                <Header title="Weather App" />
+                <Container>
+                    <SearchContainer>
+                        <InputContainer>
+                            <SearchImage src={SearchIcon} />
+                            <Input type="text" ref={inputRef} placeholder='Search...' />
+                        </InputContainer>
+                        <Button onClick={handleButtonClick}>Get Weather</Button>
+                    </SearchContainer>
+                    <Card showDetails={true} location={location} shouldSave={shouldSave} />
+                </Container>
+                <LastLocations location={location} shouldSave={shouldSave} />
+                <Modal location={location} />
+            </Main>
+        </PageContainer>
     )
 }
 
-export default Dashboard;
+export default withAuth(Dashboard);
