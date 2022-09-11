@@ -28,7 +28,7 @@ export const SearchImage = styled.img`
 export const Button = styled.button`
     padding: 0 10px;
     border-radius: 15px;
-    background: coral;
+    background: LightBlue;
     font-weight: bold;
 `;
 
@@ -49,7 +49,7 @@ export const Container = styled.section`
 export const Wrapper = styled.section`
     margin-top: 20px;
     padding: 15px;
-    box-shadow: 10px 10px 200px 0px coral inset;
+    box-shadow: 10px 10px 200px 0px LightBlue inset;
     border-radius: 15px;
 `
 

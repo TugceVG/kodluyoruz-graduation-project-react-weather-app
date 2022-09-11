@@ -19,7 +19,7 @@ export const ModalContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: LightSalmon;
+    background: LightBlue;
     padding: 20px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 15px;
@@ -32,6 +32,7 @@ export const CloseBtn = styled.button`
     border: none;
     font-weight: bold;
     border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 `;
 
 export const Day = styled.div`
@@ -72,4 +73,6 @@ export const MoreInfoWrapper = styled.div`
     padding: 10px;
 `;
 
-export const MoreInfo = styled.section``;
+export const MoreInfo = styled.section`
+    font-weight: bold;    
+`;

@@ -4,10 +4,10 @@ export const CardWrapper = styled.div`
     display: flex;
     justify-content:center;
     flex-direction: column;
-    background: lightgray;
+    box-shadow: 10px 10px 200px 0px Lightgrey inset;
     font-size: 20px;
     font-weight: bold;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 3px solid grey;
     border-radius: 15px;
     gap: 30px;
     padding: 25px;
@@ -27,4 +27,13 @@ export const CardBody = styled.div`
     justify-content: center;
     align-items: center;
     gap: 20px;
+`;
+
+export const Button = styled.button`
+    border: 3px solid lightblue;
+    border-radius: 10px;
+    background: #fff;
+    padding: 3px 5px;
+    font-weight: bold;
+    color: grey;
 `;

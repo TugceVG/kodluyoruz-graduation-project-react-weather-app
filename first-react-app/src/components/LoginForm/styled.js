@@ -6,21 +6,50 @@ export const Form = styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 500px;
     gap: 10px;
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 3px solid grey;
     border-radius: 10px;
-    background-color: coral;
+    background-color: LightBlue;
+
+    @media (min-width: 550px){
+        min-width: 500px;
+    }
+    
+    @media (max-width: 290px){
+        padding: 5px;
+    }
 `;
 
 export const InputWrapper = styled.div`
     display: flex;
-    width: 50%;
+    font-weight: bold;
     justify-content: space-between;
+    align-items: center;
+    width: 50%;
+
+    @media (max-width: 550px){
+        width: 100%;
+        gap: 15px;
+    }
+`;
+
+export const Input = styled.input`
+   border: none;
+   border-radius: 10px;
+   padding: 3px;
 `;
 
 export const ButtonWrapper = styled.div`
     display: flex;
     width: 50%;
     justify-content: flex-end;
+`;
+
+export const Button = styled.button`
+    border: 3px solid PaleTurquoise;
+    border-radius: 10px;
+    background: #fff;
+    padding: 3px 5px;
+    font-weight: bold;
+    color: grey;
 `;
