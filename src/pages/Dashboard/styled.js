@@ -16,6 +16,9 @@ export const Input = styled.input`
     height: 32px;
     width: 200px;
     border-radius: 15px;
+    @media (max-width: 300px) {
+        width: 130px;
+    }
 `;
 
 export const SearchImage = styled.img`
@@ -71,5 +74,6 @@ export const Main = styled.div`
 
     @media (max-width: 401px) {
         padding: 0;
+        width: 100%;
     }
 `;

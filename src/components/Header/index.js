@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 
-import { Wrapper, Logout } from './styled';
+import { Wrapper, Logout, Image } from './styled';
 import Profile from '../../icons/profile.png';
 import { clearStorage } from '../../utils/helpers';
 
@@ -15,9 +15,8 @@ function Header({ title }) {
     return (
         <Wrapper>
             {title}
-            <img src={Profile} alt="Profile"></img>
+            <Image src={Profile} alt="Profile"></Image>
             <Logout onClick={logoutButtonClick}>Logout</Logout>
-
         </Wrapper >
     )
 };
