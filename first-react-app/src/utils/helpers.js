@@ -9,3 +9,7 @@ export function saveToStorage(key, value) {
 
     window.localStorage.setItem(key, stringifiedValue);
 }
+
+export function clearStorage() {
+    window.localStorage.clear();
+}
