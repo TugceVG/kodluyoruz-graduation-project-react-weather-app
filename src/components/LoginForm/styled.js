@@ -11,7 +11,7 @@ export const Form = styled.form`
     border-radius: 10px;
     background-color: LightBlue;
 
-    @media (min-width: 550px){
+    @media (min-width: 551px){
         min-width: 500px;
     }
     

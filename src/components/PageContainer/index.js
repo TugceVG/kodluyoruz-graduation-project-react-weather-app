@@ -11,6 +11,6 @@ export const PageContainer = styled.div`
     background-size: contain;
 
     @media (max-width: 800px) {
-        height: unset;
+        height: ${props => props.centered ? "100vh" : "unset"};
     }
 `;
