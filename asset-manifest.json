@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/kodluyoruz-graduation-project-react-weather-app/static/css/main.357cea77.css",
+    "main.js": "/kodluyoruz-graduation-project-react-weather-app/static/js/main.aead7a73.js",
+    "static/js/787.3bf0dcc2.chunk.js": "/kodluyoruz-graduation-project-react-weather-app/static/js/787.3bf0dcc2.chunk.js",
+    "static/media/img.jpg": "/kodluyoruz-graduation-project-react-weather-app/static/media/img.9c8a08a5833646bd487d.jpg",
+    "static/media/search-icon.svg": "/kodluyoruz-graduation-project-react-weather-app/static/media/search-icon.37c45ded66e62dd78cd6b34da7371b14.svg",
+    "index.html": "/kodluyoruz-graduation-project-react-weather-app/index.html",
+    "main.357cea77.css.map": "/kodluyoruz-graduation-project-react-weather-app/static/css/main.357cea77.css.map",
+    "main.aead7a73.js.map": "/kodluyoruz-graduation-project-react-weather-app/static/js/main.aead7a73.js.map",
+    "787.3bf0dcc2.chunk.js.map": "/kodluyoruz-graduation-project-react-weather-app/static/js/787.3bf0dcc2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.357cea77.css",
+    "static/js/main.aead7a73.js"
+  ]
+}
